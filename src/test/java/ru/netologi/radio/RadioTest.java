@@ -145,6 +145,28 @@ public class RadioTest {
 
     @Test
 
+    public void diminishVolumeMaxNormalValueTest() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(101);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void diminishVolumeMaxNormalValueTest2() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+
     public void diminishVolumeLeftBorderTest() {
         Radio radio = new Radio();
         radio.setCurrentVolume(1);
