@@ -15,9 +15,9 @@ public class Radio {
     private int addVolume;
 
 
-    public int getAddVolume() {
-        return addVolume;
-    }
+   // public int getAddVolume() {
+  //     return addVolume;
+   // }
 
     public void setAddVolume(int addVolume) {
         if (currentVolume != 100) {
@@ -28,9 +28,9 @@ public class Radio {
         this.addVolume = addVolume;
     }
 
-    public int getDiminishVolume() {
-        return diminishVolume;
-    }
+   // public int getDiminishVolume() {
+      //  return diminishVolume;
+    //}
 
     public void setDiminishVolume(int diminishVolume) {
         if (currentVolume != 0) {
@@ -41,9 +41,9 @@ public class Radio {
         this.diminishVolume = diminishVolume;
     }
 
-    public int getPrevStation() {
-        return prevStation;
-    }
+   // public int getPrevStation() {
+     //   return prevStation;
+   // }
 
     public void setPrevStation(int prevStation) {
         if (currentStation != 0) {
@@ -55,9 +55,9 @@ public class Radio {
     }
 
 
-    public int getNextStation() {
-        return nextStation;
-    }
+    //public int getNextStation() {
+        //return nextStation;
+    //}
 
     public void setNextStation(int nextStation) {
         if (currentStation != 9) {
