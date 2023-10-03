@@ -1,99 +1,64 @@
 package ru.netologi.radio;
 
 public class Radio {
-
-    private int currentStation;
-
     private int currentVolume;
-
-    private int nextStation;
-
-    private int prevStation;
-
-    private int diminishVolume;
-
-    private int addVolume;
-
-
-   // public int getAddVolume() {
-  //     return addVolume;
-   // }
-
-    public void setAddVolume(int addVolume) {
-        if (currentVolume != 100) {
-            currentVolume++;
-            return;
-        }
-        currentVolume = 100;
-        this.addVolume = addVolume;
-    }
-
-   // public int getDiminishVolume() {
-      //  return diminishVolume;
-    //}
-
-    public void setDiminishVolume(int diminishVolume) {
-        if (currentVolume != 0) {
-            currentVolume--;
-            return;
-        }
-        currentVolume = 0;
-        this.diminishVolume = diminishVolume;
-    }
-
-   // public int getPrevStation() {
-     //   return prevStation;
-   // }
-
-    public void setPrevStation(int prevStation) {
-        if (currentStation != 0) {
-            currentStation--;
-            return;
-        }
-        currentStation = 9;
-        this.prevStation = prevStation;
-    }
-
-
-    //public int getNextStation() {
-        //return nextStation;
-    //}
-
-    public void setNextStation(int nextStation) {
-        if (currentStation != 9) {
-            currentStation++;
-            return;
-        }
-        currentStation = 0;
-        this.nextStation = nextStation;
-    }
+    private int currentRadioStation;
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > 100) {
-            return;
-        }
-
-        if (currentVolume < 0) {
-            return;
-        }
-        this.currentVolume = currentVolume;
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
     }
 
-    public int getCurrentStation() {
-        return currentStation;
+    public void setCurrentRadioStation(int newCurrentRadioStation) {
+        if (newCurrentRadioStation > 9) {
+            return;
+        }
+        if (newCurrentRadioStation < 0) {
+            return;
+        }
+        currentRadioStation = newCurrentRadioStation;
     }
 
-    public void setCurrentStation(int currentStation) {
-        if (currentStation > 9) {
-            return;
+    public void setCurrentVolume(int newCurrentVolume) {
+//        if (newCurrentVolume > 10) {
+//            return;
+//        }
+//        if (newCurrentVolume < 0) {
+//            return;
+//        }
+        currentVolume = newCurrentVolume;
+    }
+
+
+    public void volumeUp() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
         }
-        if (currentStation < 0) {
-            return;
+    }
+
+    public void volumeDown() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
         }
-        this.currentStation = currentStation;
+    }
+
+
+    public void next() {
+        if (currentRadioStation < 9) {
+            currentRadioStation = currentRadioStation + 1;
+        } else {
+            currentRadioStation = 0;
+        }
+    }
+
+    public void prev() {
+        if (currentRadioStation > 0) {
+            currentRadioStation = currentRadioStation - 1;
+        } else {
+            currentRadioStation = 9;
+        }
     }
 }
